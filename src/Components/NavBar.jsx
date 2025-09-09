@@ -14,7 +14,8 @@ export const NavBar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      console.log(window.scrollY)
+      setIsScrolled(window.scrollY);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -36,7 +37,7 @@ export const NavBar = () => {
             href="#hero"
             className="text-xl font-bold text-primary flex items-center"
           >
-            <span className="relative z-10">
+            <span className="relative z-50">
               <span className="text-glow text-foreground">TRS</span> Portfolio
             </span>
           </a>

@@ -71,7 +71,7 @@ export const SkillsSection = () => {
   );
 
   return (
-    <section id="skills" ref={ref} className="px-4 h-dvh relative mb-24">
+    <section id="skills" ref={ref} className="px-4 h-auto relative mb-24">
       <div className="container mx-auto max-w-5xl">
         <h2
           className={cn(

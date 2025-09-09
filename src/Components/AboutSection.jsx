@@ -10,7 +10,7 @@ export const AboutSection = () => {
   const [card3Ref, card3InView] = useInView({ threshold: 0.2 });
 
   return (
-    <section id="about" className="px-4 h-dvh relative mb-24">
+    <section id="about" className="px-4 h-auto relative mb-24">
       <div className="container mx-auto max-w-5xl">
         {/* Title */}
         <h2
@@ -55,7 +55,7 @@ export const AboutSection = () => {
                 href="#about"
                 className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/30 transition-colors duration-300"
               >
-                Resume
+                Download CV
               </a>
             </div>
           </div>

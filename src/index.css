@@ -189,6 +189,10 @@
   border: 1px solid transparent;
 }
 
+@utility text-outline {
+  @apply text-transparent font-extrabold;
+  -webkit-text-stroke: 2px hsl(var(--primary));
+}
 
 @utility cosmic-button {
   @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium transition-all duration-300 active:scale-95 hover:scale-105;
@@ -198,6 +202,21 @@
   box-shadow:
     0 0 10px rgba(139, 92, 246, 0.7),
     0 0 20px rgba(139, 92, 246, 0.5);
+}
+
+@utility tooltip {
+  @apply relative cursor-pointer;
+
+  &::after {
+    content: attr(data-tooltip);
+    @apply absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-primary text-white text-sm px-2 py-1 rounded-md opacity-0 pointer-events-none transition-opacity duration-300 whitespace-nowrap;
+    white-space: nowrap;
+    z-index: 50;
+  }
+
+  &:hover::after {
+    @apply opacity-100;
+  }
 }
 
 @utility star {

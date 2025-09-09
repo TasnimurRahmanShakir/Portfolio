@@ -6,7 +6,7 @@ export const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center px-6 z-10 mb-24"
+      className="relative min-h-screen flex items-center justify-center px-6 z-10 mb-24 mt-20"
     >
       <div className="container max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10 z-10">
         {/* Left Side - Text */}
@@ -21,8 +21,8 @@ export const HeroSection = () => {
               I turn ideas into{" "}
               <span className="inline-block overflow-hidden h-[clamp(2rem,5vw,4rem)] align-middle min-w-[14ch] opacity-0 animate-fade-in-delay-4">
                 <span className="block animate-roll text-blue-500">
-                  {identity.map((item, i) => (
-                    <span key={i} className="block">
+                  {identity.map((item) => (
+                    <span key={item} className="block">
                       {item}
                     </span>
                   ))}
@@ -36,7 +36,7 @@ export const HeroSection = () => {
           </p>
 
           <div className="pt-4 opacity-0 animate-fade-in-delay-5">
-            <a href="#project" className="cosmic-button"> 
+            <a href="#projects" className="cosmic-button"> 
               View My Work
               </a>
           </div>
