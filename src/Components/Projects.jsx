@@ -4,9 +4,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { ExternalLink, Github } from "lucide-react";
 
-import {useInView} from '@/hooks/useInView'
-
-
+import { useInView } from "@/hooks/useInView";
+import { cn } from "@/lib/utils";
 
 const projects = [
   {
@@ -33,52 +32,82 @@ const projects = [
 ];
 
 export const Projects = () => {
+  // Section-level animation
+  const [sectionRef, sectionInView] = useInView({ threshold: 0.2 });
+
+  // Project slide refs
+
   return (
-    <section id="projects" className="px-4 h-auto relative mb-24">
+    <section
+      ref={sectionRef}
+      id="projects"
+      className="px-4 h-auto relative mb-24"
+    >
       <div className="container mx-auto max-w-5xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
+        <h2
+          className={cn(
+            "text-3xl md:text-4xl font-bold mb-4 text-center opacity-0",
+            sectionInView ? "animate-fade-in" : ""
+          )}
+        >
           Featured <span className="text-primary">Projects</span>
         </h2>
 
-        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+        <p
+          className={cn(
+            "text-center text-muted-foreground mb-12 max-w-2xl mx-auto opacity-0",
+            sectionInView ? "animate-fade-in-delay-1" : ""
+          )}
+        >
           A selection of my recent projects, built with care and a strong focus
           on design and user experience.
         </p>
 
-        {/* Swiper */}
         <Swiper
           modules={[Pagination]}
           pagination={{ clickable: true }}
           spaceBetween={50}
           slidesPerView={1}
         >
-          {projects.map((project) => (
-            <SwiperSlide key={project.id}>
-              <div className="grid md:grid-cols-2 gap-8 items-center mb-10">
-                {/* Left side - details */}
-                <div className="text-left">
-                  <h3 className="text-6xl tracking-widest text-outline mb-3">
-                    {project.id}
-                  </h3>
-                  <h4 className="text-5xl font-semibold mb-5">
-                    {project.title}
-                  </h4>
-                  <p className="text-muted-foreground mb-4">
-                    {project.description}
-                  </p>
-                  <div className="flex gap-2 flex-wrap mb-4">
-                    {project.tech.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-6 py-2 rounded-xl border bg-primary/10 transition-colors duration-300"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex gap-5 ml-1">
-                    {project.liveLink && (
-                      <div className="relative">
+          {projects.map((project) => {
+
+            return (
+              <SwiperSlide key={project.id}>
+                <div
+                  className={cn(
+                      "grid md:grid-cols-2 gap-8 items-center mb-10 opacity-0",
+                      sectionInView ? "animate-fade-in-delay-3" : ""
+                  )}
+                >
+                  {/* Left side - details */}
+                  <div
+                    className={cn(
+                      "text-left"
+                    )}
+                  >
+                    <h3 className="text-6xl tracking-widest text-outline mb-3">
+                      {project.id}
+                    </h3>
+                    <h4 className="text-5xl font-semibold mb-5">
+                      {project.title}
+                    </h4>
+                    <p className="text-muted-foreground mb-4">
+                      {project.description}
+                    </p>
+
+                    <div className="flex gap-2 flex-wrap mb-4">
+                      {project.tech.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-6 py-2 rounded-xl border bg-primary/10 transition-colors duration-300"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="flex gap-5 ml-1">
+                      {project.liveLink && (
                         <a
                           href={project.liveLink}
                           target="_blank"
@@ -88,10 +117,7 @@ export const Projects = () => {
                         >
                           <ExternalLink className="w-8 h-8" />
                         </a>
-                      </div>
-                    )}
-
-                    <div className="relative">
+                      )}
                       <a
                         href={project.githubLink}
                         target="_blank"
@@ -103,19 +129,23 @@ export const Projects = () => {
                       </a>
                     </div>
                   </div>
-                </div>
 
-                {/* Right side - image */}
-                <div className="flex justify-center overflow-hidden rounded-xl shadow-lg">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="max-h-72 object-cover w-full transition-transform duration-500 hover:scale-105"
-                  />
+                  {/* Right side - image */}
+                  <div
+                    className={cn(
+                      "flex justify-center overflow-hidden rounded-xl shadow-lg"
+                    )}
+                  >
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="max-h-72 object-cover w-full transition-transform duration-500 hover:scale-105"
+                    />
+                  </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          ))}
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
       </div>
     </section>
