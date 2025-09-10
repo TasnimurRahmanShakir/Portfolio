@@ -52,7 +52,7 @@ export const Contact = () => {
         sectionInView ? "animate-fade-in-delay-1" : ""
       )}
     >
-      <Toaster position="top-right" />
+      <Toaster position="bottom-right" />
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center animate-fade-in-delay-2">
           Contact <span className="text-primary">Me</span>
