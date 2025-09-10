@@ -2,8 +2,8 @@ import { InputField } from "./InputField";
 import { cn } from "@/lib/utils";
 import { useRef, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
-import {useInView} from "@/hooks/useInView"
-
+import { useInView } from "@/hooks/useInView"
+import emailjs from "@emailjs/browser";
 import {
   Mail,
   Phone,
