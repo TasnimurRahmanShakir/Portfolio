@@ -14,7 +14,7 @@ export const NavBar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      console.log(window.scrollY)
+      console.log(window.scrollY);
       setIsScrolled(window.scrollY);
     };
     window.addEventListener("scroll", handleScroll);
@@ -37,9 +37,7 @@ export const NavBar = () => {
             href="#hero"
             className="text-xl font-bold text-primary flex items-center"
           >
-            <span className="relative z-50 ml-5">
-               Tasnim.
-            </span>
+            <span className="relative z-50 ml-5">Tasnim.</span>
           </a>
 
           {/* Desktop nav */}

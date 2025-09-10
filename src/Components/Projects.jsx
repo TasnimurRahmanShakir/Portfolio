@@ -3,11 +3,12 @@ import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import { ExternalLink, Github } from "lucide-react";
+
 import medScan from "../assets/medScan.png"
+
 
 import { useInView } from "@/hooks/useInView";
 import { cn } from "@/lib/utils";
-
 const projects = [
   {
     id: "01",
