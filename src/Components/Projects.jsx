@@ -3,6 +3,7 @@ import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import { ExternalLink, Github } from "lucide-react";
+import medScan from "../assets/medScan.png"
 
 import { useInView } from "@/hooks/useInView";
 import { cn } from "@/lib/utils";
@@ -14,7 +15,7 @@ const projects = [
     description:
       "This is a project that predicts heart disease at an early stage using deep learning. It analyzes chest X-ray images to detect signs of an enlarged heart (cardiomegaly) and provides clear results through an easy-to-use web interface.",
     tech: ["React", "Django", "Deep Learning"],
-    image: "../assets/medScan.png",
+    image: medScan,
     liveLink: "https://heart-disease-prediction-6r3vbxfnn.vercel.app/",
     githubLink:
       "https://github.com/TasnimurRahmanShakir/Heart-Disease-Prediction.git",
@@ -25,7 +26,7 @@ const projects = [
     description:
       "Another variation of the project with improvements and testing.",
     tech: ["React", "FastAPI", "Deep Learning"],
-    image: "../assets/medScan.png",
+    image: medScan,
     githubLink:
       "https://github.com/TasnimurRahmanShakir/Heart-Disease-Prediction.git",
   },
