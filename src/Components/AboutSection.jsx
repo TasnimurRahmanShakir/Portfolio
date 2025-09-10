@@ -52,7 +52,7 @@ export const AboutSection = () => {
                 Get In Touch
               </a>
               <a
-                href="../assets/Tasnimur_Rahman_Resume.pdf"
+                href="/Tasnimur_Rahman_Resume.pdf"
                 download="Md. Tasnimur Rahman Resume.pdf"
                 className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/30 transition-colors duration-300"
               >
