@@ -24,7 +24,6 @@ export const Contact = () => {
   const sendEmail = async (e) => {
     e.preventDefault();
     setLoading(true);
-    console.log("PUBLIC KEY:", import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
 
     try {
       await emailjs.sendForm(
