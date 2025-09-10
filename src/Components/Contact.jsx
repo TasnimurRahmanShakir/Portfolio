@@ -18,31 +18,25 @@ import {
 export const Contact = () => {
   const formRef = useRef();
   const [loading, setLoading] = useState(false);
-  const [sectionRef, sectionInView] = useInView({threshold:0.2})
+  const [sectionRef, sectionInView] = useInView({ threshold: 0.2 });
 
   const sendEmail = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-    const formData = {
-      name: formRef.current.name.value,
-      email: formRef.current.email.value,
-      message: formRef.current.message.value,
-    };
-
     try {
-      const res = await fetch("/api/sendEmail", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      if (!res.ok) throw new Error("Failed to send message");
+      await emailjs.sendForm(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+      );
 
       toast.success("Message sent successfully!", { duration: 1500 });
       formRef.current.reset();
     } catch (err) {
       toast.error(`Failed to send message. ${err}`, { duration: 1500 });
+      console.error("EmailJS Error:", err);
     } finally {
       setLoading(false);
     }

@@ -1,12 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 
 export const useInView = (options = {}) => {
-  console.log(options)
   const ref = useRef(null);
   const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
-    console.log("running useEffect");
     const node = ref.current;
     const observer = new IntersectionObserver(
       ([entry]) => setIsInView(entry.isIntersecting),
