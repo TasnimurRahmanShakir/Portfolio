@@ -1,4 +1,10 @@
 import TasnimImg from "../assets/Tasnim.png";
+import {
+  Linkedin,
+  Instagram,
+  Facebook,
+  Github,
+} from "lucide-react";
 
 const identity = ["Web Experiences", "AI/ML Solutions", "Backend Systems"];
 
@@ -36,9 +42,34 @@ export const HeroSection = () => {
           </p>
 
           <div className="pt-4 opacity-0 animate-fade-in-delay-5">
-            <a href="#projects" className="cosmic-button"> 
+            <a href="#projects" className="cosmic-button">
               View My Work
-              </a>
+            </a>
+          </div>
+          <div className="pt-8">
+            <h4 className="font-medium mb-4">
+              <div className="flex space-x-4 justify-center md:justify-start">
+                <a
+                  href="https://www.linkedin.com/in/md-tasnimur-rahman-36bab6219/"
+                  target="_blank"
+                >
+                  <Linkedin />
+                </a>
+                <a
+                  href="https://www.instagram.com/tasnimurrrahman/"
+                  target="_blank"
+                >
+                  <Instagram />
+                </a>
+
+                <a href="https://www.facebook.com/Tasnim0152" target="_blank">
+                  <Facebook />
+                </a>
+                <a href="https://github.com/TasnimurRahmanShakir/">
+                  <Github />
+                </a>
+              </div>
+            </h4>
           </div>
         </div>
 

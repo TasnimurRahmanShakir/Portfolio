@@ -63,8 +63,7 @@ const categories = [
 export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
   const [ref, isInView] = useInView({ threshold: 0.2 });
-  console.log(isInView);
-  console.log(ref);
+
 
   const filteredSkills = skills.filter(
     (skill) => activeCategory === "all" || skill.category === activeCategory
@@ -76,7 +75,7 @@ export const SkillsSection = () => {
         <h2
           className={cn(
             "text-3xl md:text-4xl font-bold mb-12 text-center opacity-0",
-            isInView ? "animate-fade-in-delay-3" : ""
+            isInView ? "animate-fade-in-delay-1" : ""
           )}
         >
           My{" "}

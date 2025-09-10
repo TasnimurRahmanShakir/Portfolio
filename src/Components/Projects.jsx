@@ -68,6 +68,7 @@ export const Projects = () => {
           pagination={{ clickable: true }}
           spaceBetween={50}
           slidesPerView={1}
+          
         >
           {projects.map((project) => {
 
