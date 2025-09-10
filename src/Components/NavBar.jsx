@@ -38,7 +38,7 @@ export const NavBar = () => {
             className="text-xl font-bold text-primary flex items-center"
           >
             <span className="relative z-50">
-              <span className="text-glow text-foreground">TRS</span> Portfolio
+              Tasnim.
             </span>
           </a>
 
