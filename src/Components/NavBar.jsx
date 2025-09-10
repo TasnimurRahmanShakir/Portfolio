@@ -38,7 +38,7 @@ export const NavBar = () => {
             className="text-xl font-bold text-primary flex items-center"
           >
             <span className="relative z-50">
-              Tasnim.
+              <span className="text-glow text-foreground"></span> Tasnim .
             </span>
           </a>
 
