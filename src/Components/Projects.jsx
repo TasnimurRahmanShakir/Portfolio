@@ -5,6 +5,7 @@ import "swiper/css/pagination";
 import { ExternalLink, Github } from "lucide-react";
 
 import medScan from "../assets/medScan.png"
+import CareerBoost from "../assets/CareerBoost.png"
 
 
 import { useInView } from "@/hooks/useInView";
@@ -12,22 +13,23 @@ import { cn } from "@/lib/utils";
 const projects = [
   {
     id: "01",
+    title: "Career",
+    description:
+      " An intelligent platform designed to help fresh graduates enhance their job application success. It analyzes resumes to improve ATS compatibility, conducts AI-powered mock interviews (Audio, video) with performance feedback on confidence and accuracy, and offers personalized mentorship sessions for continuous skill growth.",
+    tech: ["React", "FastAPI", "Whisper", "Mediapipe", "SmythOS", "Express", "MongoDB"],
+    image: CareerBoost,
+    liveLink: "",
+    githubLink:
+      "https://github.com/TasnimurRahmanShakir/AI-JOB-COACH.git",
+  },
+  {
+    id: "02",
     title: "medScan",
     description:
       "This is a project that predicts heart disease at an early stage using deep learning. It analyzes chest X-ray images to detect signs of an enlarged heart (cardiomegaly) and provides clear results through an easy-to-use web interface.",
     tech: ["React", "Django", "Deep Learning"],
     image: medScan,
     liveLink: "https://heart-disease-prediction-6r3vbxfnn.vercel.app/",
-    githubLink:
-      "https://github.com/TasnimurRahmanShakir/Heart-Disease-Prediction.git",
-  },
-  {
-    id: "02",
-    title: "menScan 2",
-    description:
-      "Another variation of the project with improvements and testing.",
-    tech: ["React", "FastAPI", "Deep Learning"],
-    image: medScan,
     githubLink:
       "https://github.com/TasnimurRahmanShakir/Heart-Disease-Prediction.git",
   },
