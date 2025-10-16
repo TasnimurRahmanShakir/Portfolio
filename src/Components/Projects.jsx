@@ -13,7 +13,7 @@ import { cn } from "@/lib/utils";
 const projects = [
   {
     id: "01",
-    title: "Career",
+    title: "CareerBoost AI",
     description:
       " An intelligent platform designed to help fresh graduates enhance their job application success. It analyzes resumes to improve ATS compatibility, conducts AI-powered mock interviews (Audio, video) with performance feedback on confidence and accuracy, and offers personalized mentorship sessions for continuous skill growth.",
     tech: ["React", "FastAPI", "Whisper", "Mediapipe", "SmythOS", "Express", "MongoDB"],
